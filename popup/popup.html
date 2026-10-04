@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Ajouter à Attio</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <strong>LinkedIn → Attio</strong>
+    <button type="button" id="open-options" class="link" title="Options">Options</button>
+  </header>
+
+  <div id="status" class="status" hidden></div>
+
+  <form id="form" hidden autocomplete="off">
+    <div id="homonyms" class="notice notice--warn" hidden></div>
+
+    <div class="row">
+      <label>Prénom<input id="firstName" required></label>
+      <label>Nom<input id="lastName"></label>
+    </div>
+    <p id="name-locked" class="hint" hidden>Fiche existante : le nom n'est jamais modifié.</p>
+
+    <div class="field" data-field="jobTitle">
+      <label>Titre<input id="jobTitle"></label>
+      <div class="diff" hidden></div>
+    </div>
+
+    <div class="field" data-field="company">
+      <label>Entreprise<input id="company"></label>
+      <div class="diff" hidden></div>
+    </div>
+
+    <div class="field" data-field="location">
+      <label>Localisation<input id="location"></label>
+      <div class="diff" hidden></div>
+    </div>
+
+    <label>URL LinkedIn<input id="linkedinUrl" placeholder="https://www.linkedin.com/in/…"></label>
+    <p id="salesnav" class="hint" hidden></p>
+
+    <label>Type de contact
+      <select id="contactType"><option value="">— Non renseigné —</option></select>
+    </label>
+    <p id="type-problem" class="notice notice--warn" hidden></p>
+
+    <label>Note (optionnelle)<textarea id="note" rows="3" placeholder="Contexte, prochaine étape…"></textarea></label>
+
+    <button type="submit" id="submit" class="primary">Ajouter à Attio</button>
+    <p class="hint center"><button type="button" id="diagnose" class="link">Un champ est faux ? Copier le diagnostic</button></p>
+  </form>
+
+  <div id="result" hidden></div>
+
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/url.js"></script>
+  <script src="../shared/location.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

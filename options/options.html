@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>LinkedIn → Attio · Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>LinkedIn → Attio</h1>
+
+    <section>
+      <h2>Connexion</h2>
+      <label for="token">Token API Attio</label>
+      <input id="token" type="password" placeholder="Colle ici ton access token" spellcheck="false">
+      <p class="hint">Attio → Settings → Developers → Create new integration → Access token.
+        Scopes : Records (read-write), Object configuration (read), Notes (read-write).</p>
+      <label class="inline"><input id="show" type="checkbox"> Afficher le token</label>
+    </section>
+
+    <section>
+      <h2>Attributs Attio (objet People)</h2>
+      <label for="contactTypeSlug">Slug de l'attribut « Type de contact » (select)</label>
+      <input id="contactTypeSlug" spellcheck="false">
+      <label for="salesnavIdSlug">Slug de l'attribut « ID Sales Navigator » (text)</label>
+      <input id="salesnavIdSlug" spellcheck="false">
+    </section>
+
+    <div class="actions">
+      <button id="save" type="button">Enregistrer</button>
+      <button id="test" type="button" class="primary">Tester la connexion</button>
+    </div>
+
+    <div id="result" hidden></div>
+  </main>
+
+  <script src="../shared/constants.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn → Attio",
+  "version": "0.1.0",
+  "description": "Ajoute un profil LinkedIn à Attio en un clic et affiche s'il est déjà dans le CRM. Compatible Arc (sans sidePanel).",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://api.attio.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Ajouter à Attio",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+A", "mac": "Alt+Shift+A" },
+      "description": "Ouvrir le formulaire LinkedIn → Attio"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": [
+        "shared/url.js",
+        "shared/location.js",
+        "content/selectors.js",
+        "content/extractor.js",
+        "content/badges.js"
+      ],
+      "css": ["content/badges.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
