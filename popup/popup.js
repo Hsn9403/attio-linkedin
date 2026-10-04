@@ -110,7 +110,7 @@
     $('linkedinUrl').value = p.linkedinUrl || '';
     if (p.salesnavId) {
       $('salesnav').textContent = 'Identifiant Sales Navigator : ' + p.salesnavId +
-        (p.linkedinUrl ? '' : " — URL publique non visible. Astuce : ouvre le menu « … » du lead dans Sales Nav, laisse-le ouvert et rouvre l'extension. Facultatif : l'ID suffit à éviter les doublons.");
+        (p.linkedinUrl ? '' : ". URL publique non visible. Astuce : ouvre le menu « … » du lead dans Sales Nav, laisse-le ouvert et rouvre l'extension. Facultatif : l'ID suffit à éviter les doublons.");
       $('salesnav').hidden = false;
     }
     $('form').hidden = false;
@@ -158,7 +158,7 @@
       $('type-problem').hidden = false;
     }
     if (extracted.salesnavId && !attrs.salesnavId.ok) {
-      $('salesnav').textContent += ' — ' + attrs.salesnavId.problem;
+      $('salesnav').textContent += '. ' + attrs.salesnavId.problem;
     }
 
     for (const f of Object.keys(ATTIO_VALUE)) updateDiff(f);

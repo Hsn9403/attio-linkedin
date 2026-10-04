@@ -1,5 +1,7 @@
 # LinkedIn → Attio (compatible Arc)
 
+**Français** · [English](README.en.md)
+
 Extension Chromium (Manifest V3) qui :
 
 - ajoute un profil LinkedIn ou Sales Navigator à Attio en un clic, via un popup pré-rempli et modifiable ;
@@ -56,7 +58,7 @@ Dans Attio → **Settings** → **Objects** → **People** → **Attributes** �
 | Nom affiché | Slug (API) | Type | Options |
 |---|---|---|---|
 | Type de contact | `contact_type` | **Select** (choix unique ou multiple) | au choix, par exemple `Prospect`, `Client`, `Partenaire` |
-| ID Sales Navigator | `salesnav_id` | **Text** | — |
+| ID Sales Navigator | `salesnav_id` | **Text** | |
 
 - Les options du type de contact sont lues directement dans Attio : le menu du popup affiche celles de l'attribut. Pour en ajouter ou en retirer, il suffit de modifier l'attribut dans Attio.
 - Les slugs sont modifiables dans les options de l'extension si les attributs existent déjà sous un autre nom.

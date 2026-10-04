@@ -319,7 +319,7 @@ export async function lookupProfile(profile) {
 
 // Rattachement d'une entreprise, du plus fiable au moins fiable :
 // 1. URL LinkedIn de l'entreprise (attribut standard `linkedin` des Companies) ;
-// 2. nom exact — on complète alors son URL LinkedIn si elle est vide ;
+// 2. nom exact, puis on complète son URL LinkedIn si elle est vide ;
 // 3. création avec le nom et l'URL.
 async function findOrCreateCompany(name, linkedinUrl) {
   const clean = name.trim();
